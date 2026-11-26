@@ -1,0 +1,33 @@
+@'
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# Environment
+.env
+
+# Data
+data/cvs/*
+data/job_offers/*
+!data/cvs/.gitkeep
+!data/job_offers/.gitkeep
+
+# Generated reports
+reports/*
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+'@ | Set-Content -Encoding UTF8 .gitignore

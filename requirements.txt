@@ -1,0 +1,9 @@
+﻿streamlit
+pymupdf
+scikit-learn
+pandas
+numpy
+requests
+python-dotenv
+pydantic
+pytest
