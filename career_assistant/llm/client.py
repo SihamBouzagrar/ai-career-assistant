@@ -1,3 +1,4 @@
+
 import os
 import requests
 
@@ -8,13 +9,13 @@ load_dotenv()
 
 class OllamaClient:
 
-    def __init__(self):
+    def __init__(self, model=None):
         self.base_url = os.getenv(
             "OLLAMA_BASE_URL",
             "http://localhost:11434"
         )
 
-        self.model = os.getenv(
+        self.model = model or os.getenv(
             "OLLAMA_MODEL",
             "qwen2.5:3b"
         )
@@ -23,12 +24,13 @@ class OllamaClient:
             os.getenv("REQUEST_TIMEOUT", "120")
         )
 
-    def generate(self, prompt: str) -> str:
+    def generate(self, prompt: str, model=None) -> str:
+        selected_model = model or self.model
 
         url = f"{self.base_url}/api/chat"
 
         payload = {
-            "model": self.model,
+            "model": selected_model,
             "messages": [
                 {
                     "role": "user",
@@ -51,7 +53,6 @@ class OllamaClient:
         return result["message"]["content"]
 
     def health_check(self) -> bool:
-
         try:
             response = requests.get(
                 f"{self.base_url}/api/tags",
@@ -59,7 +60,6 @@ class OllamaClient:
             )
 
             response.raise_for_status()
-
             return True
 
         except requests.RequestException:

@@ -1,0 +1,37 @@
+
+[
+  {
+    "id": "eval_001",
+    "question": "Which skills are missing from the candidate profile?",
+    "context": "The candidate has Python, SQL and Docker skills. The job requires Python, SQL and AWS.",
+    "expected_points": [
+      "AWS is missing from the candidate profile",
+      "Python is already present",
+      "SQL is already present"
+    ],
+    "sample_answer": "AWS is missing from the candidate profile. Python and SQL are already present."
+  },
+  {
+    "id": "eval_002",
+    "question": "How can the candidate improve the CV?",
+    "context": "The candidate has Python and SQL. The job requires Python, SQL, Docker and AWS.",
+    "expected_points": [
+      "Learn Docker",
+      "Develop AWS skills",
+      "Highlight Python experience",
+      "Highlight SQL experience"
+    ],
+    "sample_answer": "The candidate should learn Docker and develop AWS skills. The CV should also highlight existing Python and SQL experience."
+  },
+  {
+    "id": "eval_003",
+    "question": "Is the candidate guaranteed to get the job?",
+    "context": "The candidate has Python and SQL. The job requires Python, SQL and AWS. Matching coverage is 66.67 percent.",
+    "expected_points": [
+      "Matching score is not a hiring probability",
+      "The candidate is not guaranteed to get the job",
+      "AWS is missing"
+    ],
+    "sample_answer": "No. A matching score is not a hiring probability and does not guarantee recruitment. AWS is missing from the candidate profile."
+  }
+]
