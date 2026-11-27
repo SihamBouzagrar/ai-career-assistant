@@ -1,6 +1,14 @@
 # AI Career Assistant
+![Python](https://img.shields.io/badge/Python-3.13-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-Cloud-FF4B4B)
+![Docker](https://img.shields.io/badge/Docker-Supported-2496ED)
+![Tests](https://img.shields.io/badge/Tests-27%20Passed-success)
 
-An AI-powered career analysis platform that evaluates the compatibility between a candidate's CV and a job description, identifies skill gaps, and generates personalized career recommendations using Large Language Models (LLMs).
+An AI-powered application designed to help candidates analyze their CVs, evaluate job compatibility, identify missing skills, and receive personalized career recommendations.
+
+🚀 **Live Demo:** [Try AI Career Assistant](https://ai-career-assistant-e2hqbcarzcd4drrg3n6v2v.streamlit.app/)
+
+**Note:** The deployed version provides access to the application's interface and non-LLM features. AI-powered recommendations and model evaluation require an accessible Ollama service and are not available in the current public deployment.
 
 ## Features
 
@@ -14,7 +22,25 @@ An AI-powered career analysis platform that evaluates the compatibility between 
 - **LLM-as-a-Judge:** Evaluate relevance, faithfulness, completeness, and accuracy.
 - **Model Benchmarking:** Compare different local LLMs using a shared evaluation dataset.
 - **Evaluation Dashboard:** Visualize evaluation results, model comparisons, and historical reports.
+## Deployment
 
+The application is deployed using **Streamlit Community Cloud**.
+
+- **Platform:** Streamlit Community Cloud
+- **Entry point:** `app/streamlit_app.py`
+- **Source code:** [GitHub Repository](https://github.com/SihamBouzagrar/ai-career-assistant)
+
+### Deployment limitations
+
+The application currently uses Ollama for local LLM inference.
+
+In the public deployment:
+- CV parsing and skill extraction are available.
+- Job requirement extraction and CV-job matching are available.
+- The evaluation dashboard interface is accessible.
+- LLM-powered recommendations and model comparison require an accessible Ollama service and are currently unavailable in the hosted environment.
+
+The complete LLM functionality can be run locally using Docker and Ollama, following the installation instructions below.
 ## Architecture
 
 The project follows a modular Python architecture.
